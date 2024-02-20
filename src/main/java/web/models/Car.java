@@ -1,5 +1,7 @@
 package web.models;
 
+import java.util.Objects;
+
 public class Car {
 
     private String model;
@@ -36,7 +38,26 @@ public class Car {
         this.region = region;
     }
 
-    //todo: equals/hachCode .. toString()
+    @Override
+    public String toString() {
+        return "Car{" +
+                "model='" + model + '\'' +
+                ", series='" + series + '\'' +
+                ", region='" + region + '\'' +
+                '}';
+    }
 
-    //todo: README.md - заглавными
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return Objects.equals(model, car.model) && Objects.equals(series, car.series) && Objects.equals(region, car.region);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(model, series, region);
+    }
+
 }
