@@ -1,6 +1,7 @@
 package web.models;
 
 public class Car {
+
     private String model;
     private String series;
     private String region;
@@ -34,4 +35,8 @@ public class Car {
     public void setRegion(String region) {
         this.region = region;
     }
+
+    //todo: equals/hachCode .. toString()
+
+    //todo: README.md - заглавными
 }
